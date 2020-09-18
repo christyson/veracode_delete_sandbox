@@ -38,15 +38,16 @@ def main():
 
                  if response.ok:
                     print("Sandbox deleted")
+                    exit(0)
                  else:
                     print(response.status_code)                 
-                 exit(0)
+                    exit(1)
               else:
                  print ('Sandbox: '+args.sandbox+' of app: '+args.app+' not found!')
                  exit(1)
     if (not found):
        print ('App: '+args.app+' with sandbox: '+args.sandbox+' does not exist')
-    exit(0)
+    exit(1)
 
 if __name__ == '__main__':
     main()
